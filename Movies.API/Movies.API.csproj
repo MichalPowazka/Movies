@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Movies.DTO\Movies.DTO.csproj" />
-    <ProjectReference Include="..\Movies.Services\Movies.Services.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 

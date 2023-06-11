@@ -24,6 +24,7 @@ namespace Repositories.Repositories
             return entity;
         }
 
+
         public Movie Delete(Movie entity)
         {
             throw new NotImplementedException();
@@ -37,6 +38,15 @@ namespace Repositories.Repositories
         public Movie Update(Movie entity)
         {
             throw new NotImplementedException();
+        }
+
+        public void DeleteMovieById(int id)
+        {
+            var movieToDelete = _context.Movies.FirstOrDefault(m => m.Id == id);
+
+            _context.Movies.Remove(movieToDelete);
+
+            _context.SaveChanges();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Movies.API.DTO.Movies;
-using Movies.Services.Interfaces;
+using Repositories.Repositories;
 
 namespace Movies.API.Controllers
 {
@@ -13,22 +12,29 @@ namespace Movies.API.Controllers
         /// <summary>
         /// Dependency Injection
         /// </summary>
-        public readonly IMoviesService _moviesService;
+        public readonly MovieRepository _repository;
 
-        public MoviesController(IMoviesService moviesService)
+        public MoviesController(MovieRepository movieRepository)
         {
-            _moviesService = moviesService;
+            _repository = movieRepository;
         }
         
 
         [HttpGet]
         public async Task<IActionResult> Get(string id) => Ok();
 
-        [HttpPost]
-        public async Task<IActionResult> Post(AddMovie addMovie)
+        //[HttpPost]
+        //public async Task<IActionResult> Post(AddMovie addMovie)
+        //{
+        // //   var result =_repository.Add(addMovie);
+        //   // return Ok(result);
+        //}
+
+        [HttpPost("DeleteById/{id}")]
+        public IActionResult DeleteById(int it)
         {
-            var result =_moviesService.Add(addMovie);
-            return Ok(result);
+            _repository.DeleteMovieById(it);
+            return Ok();
         }
 
 
