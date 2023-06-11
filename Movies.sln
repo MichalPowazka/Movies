@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.API", "Movies.API\Movies.API.csproj", "{EE56EBE1-4EF1-4DE4-928A-8C75508388EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.API", "Movies.API\Movies.API.csproj", "{EE56EBE1-4EF1-4DE4-928A-8C75508388EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Services", "Movies.Services\Movies.Services.csproj", "{5168B5B8-41FF-4C5F-809F-7AF05FAE212C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Services", "Movies.Services\Movies.Services.csproj", "{5168B5B8-41FF-4C5F-809F-7AF05FAE212C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{86F6DDD2-53F1-4C8A-A8BC-169ADF0C92A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{86F6DDD2-53F1-4C8A-A8BC-169ADF0C92A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.DTO", "Movies.DTO\Movies.DTO.csproj", "{6D943E49-D316-4759-B694-E8EABA818BFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.DTO", "Movies.DTO\Movies.DTO.csproj", "{6D943E49-D316-4759-B694-E8EABA818BFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F2ACD02-74FC-4A18-986B-540846C29DA4}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

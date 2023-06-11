@@ -11,9 +11,12 @@ namespace Repositories.Interfaces
     {
         // CRUD
         public Movie Add(Movie entity);
+
+        // dobra zajmujemy sie update teraz
         public Movie Update(Movie entity);
-        public Movie Delete(Movie entity);
+        public Movie Delete(int id);
         public IEnumerable<Movie> GetAll();
+        public Movie GetMovie(int id);
 
 
     }

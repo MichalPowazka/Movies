@@ -1,0 +1,2 @@
+https://learn.microsoft.com/pl-pl/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli   --- migracje 
+https://www.c-sharpcorner.com/UploadFile/85ed7a/dependency-injection-in-C-Sharp/ - DI od hidusa po eng

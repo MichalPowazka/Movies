@@ -19,23 +19,41 @@ namespace Repositories.Repositories
 
         public Movie Add(Movie entity)
         {
+            //entity odzwierciedlenie tablek w kodzie aplikacji
             _context.Movies.Add(entity);
             _context.SaveChanges();
             return entity;
         }
 
-        public Movie Delete(Movie entity)
+        public Movie Delete(int id)
         {
-            throw new NotImplementedException();
+
+           var movieToDelete = _context.Movies.Find(id);
+           
+                _context.Movies.Remove(movieToDelete);
+                _context.SaveChanges();
+                return movieToDelete;
+
         }
 
         public IEnumerable<Movie> GetAll()
         {
-            throw new NotImplementedException();
+            ///
+            return _context.Movies.ToList();
+        }
+
+        public Movie GetMovie(int id)
+        {
+            return _context.Movies.First(_ => _.Id == id);
+            
         }
 
         public Movie Update(Movie entity)
         {
+            //// tutaj dodałem troche na czuja
+            _context.Movies.Update(entity);
+            _context.SaveChanges ();
+            //////////////////
             throw new NotImplementedException();
         }
     }
