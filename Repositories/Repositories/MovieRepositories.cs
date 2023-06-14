@@ -1,4 +1,5 @@
-﻿using Repositories.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositories.Entities;
 using Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,15 +26,11 @@ namespace Repositories.Repositories
             return entity;
         }
 
-        public Movie Delete(int id)
+        public void Delete(int id)
         {
-
-           var movieToDelete = _context.Movies.Find(id);
-           
-                _context.Movies.Remove(movieToDelete);
-                _context.SaveChanges();
-                return movieToDelete;
-
+            var movieToDelete = _context.Movies.Find(id);
+            _context.Movies.Remove(movieToDelete);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Movie> GetAll()
@@ -42,19 +39,25 @@ namespace Repositories.Repositories
             return _context.Movies.ToList();
         }
 
-        public Movie GetMovie(int id)
+        public async Task<Movie> GetMovie(int id)
         {
-            return _context.Movies.First(_ => _.Id == id);
-            
+            try
+            {
+                return await _context.Movies.FirstAsync(m => m.Id == id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public Movie Update(Movie entity)
         {
-            //// tutaj dodałem troche na czuja
             _context.Movies.Update(entity);
-            _context.SaveChanges ();
-            //////////////////
-            throw new NotImplementedException();
+            _context.SaveChanges();
+            return entity;
         }
     }
 }

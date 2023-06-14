@@ -12,11 +12,11 @@ namespace Movies.Services.Interfaces
     public interface IMoviesService
     {
         public Movie Add(AddMovie addMovie);
-        public Movie Update(UpdateMovie updateMovie);
-        public Movie GetById(int id);
+        public Task<Movie> Update(UpdateMovie updateMovie);
+        public Task<Movie> GetById(int id);
 
         // tutaj ostatnio zmienialem
-        public Movie DeleteById(int id);
+        public void Delete(int id);
 
 
     }

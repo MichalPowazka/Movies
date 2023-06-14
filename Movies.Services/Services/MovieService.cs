@@ -35,18 +35,26 @@ namespace Movies.Services.Services
 
         }
 
-        public Movie GetById(int id)
+        public async Task<Movie> GetById(int id)
         {
-           
-            return _movieRepository.GetMovie(id);
+
+            try
+            {
+                return await _movieRepository.GetMovie(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             
         }
 
-        public Movie Update(UpdateMovie updateMovie)
+        public async Task<Movie> Update(UpdateMovie updateMovie)
         {
             // pobrac rekord z DB
             //_movieRepository.
-            var entity = _movieRepository.GetMovie(updateMovie.ID);
+            var entity = await _movieRepository.GetMovie(updateMovie.ID);
             if (entity != null)
             {
                 entity.Title = updateMovie.Title;
@@ -55,15 +63,13 @@ namespace Movies.Services.Services
                 entity.ModifyDate = DateTime.Now;
 
             }
-
-         
             //_movieRepository.Update(entity);
-            return entity;
+            return _movieRepository.Update(entity);
         }
 
-        public Movie DeleteById(int id)
+        public void Delete(int id)
         {
-            return _movieRepository.GetMovie(id);
+              _movieRepository.Delete(id);
             
         }
     }
